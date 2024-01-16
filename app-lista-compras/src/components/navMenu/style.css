@@ -1,0 +1,15 @@
+.NavOpt ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 5px;
+    width: 50%;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.NavOpt li {
+    margin: 10px;
+    list-style: none;
+    cursor: pointer;
+}
