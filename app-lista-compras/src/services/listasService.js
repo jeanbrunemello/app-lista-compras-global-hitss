@@ -16,6 +16,15 @@ class ListasService {
     }
   }
 
+  async apagarListaPorId(id) {
+    try {
+      const response = await axios.delete(`${BASE_URL}/${PATH}/${id}`);
+      return response.data;
+    } catch (error) {
+      console.error('Erro ao apagar lista:', error);
+      throw error;
+    }
+  }
 }
 
  const listasService = new ListasService();
