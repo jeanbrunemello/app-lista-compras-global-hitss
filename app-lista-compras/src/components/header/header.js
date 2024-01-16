@@ -4,12 +4,12 @@ import NavMenu from '../navMenu/navMenu';
 
 function Header() {
     return (
-        <header className='NavOpt'>
+        <div className='menu'>
             <div className='flex'>
                 <Logo></Logo>
                 <NavMenu></NavMenu>
             </div>
-        </header>
+        </div>
     );
 }
 
