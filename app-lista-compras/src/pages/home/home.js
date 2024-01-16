@@ -1,14 +1,15 @@
 import React from 'react';
-import Titulo from '../../components/titulo/titulo'
-import Card from '../../components/card/card'
-import css from '../home/style.css'
+import Titulo from '../../components/titulo/titulo';
+import Card from '../../components/card/card';
+import css from '../home/style.css';
 import NavMenu from '../../components/navMenu/navMenu';
+
+const conteudoTitulo = 'app lista de compras';
 
 const Home = () => {
   return (
 <main>
-  <Titulo></Titulo>
-    <Card></Card>
+<Titulo titulo={conteudoTitulo}></Titulo>
 </main>
   );
 }

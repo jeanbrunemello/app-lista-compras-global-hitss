@@ -1,0 +1,9 @@
+.titulo {
+    margin: 100px 10px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 24px;
+}

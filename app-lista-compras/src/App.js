@@ -13,9 +13,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Header></Header>
-        <Home></Home>
-        <InputBox></InputBox>
       </header>
+        <Home></Home>
     </div>
   );
 }

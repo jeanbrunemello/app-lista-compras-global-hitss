@@ -5,9 +5,9 @@ const navOpt = ['HOME', 'LISTAS', 'LOGIN']
 
 function NavMenu() {
     return (
-        <ul>
+        <ul className='menu_lista'>
             {navOpt.map((opt) => (
-                <li className='opcao'><p>{opt}</p></li>
+                <li className='menu_itens'><p>{opt}</p></li>
             ))}
         </ul>
     );
