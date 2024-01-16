@@ -1,0 +1,10 @@
+.container-flex{
+    display: flex;
+    justify-content: flex-end;
+    margin: 30px 10px;
+ 
+}
+
+.button-add {
+    cursor: pointer;
+}
