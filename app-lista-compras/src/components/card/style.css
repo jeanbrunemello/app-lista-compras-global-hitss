@@ -16,7 +16,7 @@
     cursor: pointer;
 }
 
-.botao-delete{
+.botao-delete, .botao-edit{
     margin: 0;
     padding: 0;
     width: 36px;
@@ -25,4 +25,8 @@
     justify-content: center;
     align-items: center;
     border-radius: 360px;
+}
+
+.botao-container{
+    display: flex;
 }

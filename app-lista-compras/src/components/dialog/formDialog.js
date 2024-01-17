@@ -8,8 +8,11 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { IconButton } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
+import EditIcon from '@mui/icons-material/Edit';
+import { formToJSON } from 'axios';
+import { Home } from '@mui/icons-material';
 
-export default function FormDialog({texto, adicionarLista}) {
+export default function FormDialog({ textoBtn, adicionarLista, editarLista, listaId }) {
 
   const [open, setOpen] = React.useState(false);
 
@@ -21,49 +24,100 @@ export default function FormDialog({texto, adicionarLista}) {
     setOpen(false);
   };
 
-  return (
-    <React.Fragment>
-      <div className='container-flex'>
-      <Button className='button-add' variant="text" onClick={handleClickOpen}>
-      <AddIcon className='button-add-icon' /> {texto.toUpperCase()}
-      </Button>
-      </div>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        PaperProps={{
-          component: 'form',
-          onSubmit: (event) => {
-            event.preventDefault();
-            const formData = new FormData(event.currentTarget);
-            const formJson = Object.fromEntries(formData.entries());
-            adicionarLista(formJson)
-            handleClose();
-          },
-        }}
-      >
-        <DialogTitle>Editar nome</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
+  if (textoBtn != "add") {
+    return (
+      <React.Fragment>
+        <div className='container-flex'>
+          <Button className='button-add' variant="text" onClick={handleClickOpen}>
+            <EditIcon className='button-add-icon' />
+          </Button>
+        </div>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          PaperProps={{
+            component: 'form',
+            onSubmit: (event) => {
+              event.preventDefault();
+              const formData = new FormData(event.currentTarget);
+              const formJson = Object.fromEntries(formData.entries());
+              console.log(formJson)
+              console.log(` form dialog ${listaId}`)
 
-          </DialogContentText>
-          <TextField
-            autoFocus
-            required
-            margin="dense"
-            id="nome_lista"
-            name="nome_lista"
-            label="Digite um novo nome para a lista..."
-            type="text"
-            fullWidth
-            variant="standard"
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button type="submit">Subscribe</Button>
-        </DialogActions>
-      </Dialog>
-    </React.Fragment>
-  );
+              editarLista(listaId, formJson)
+              handleClose();
+            },
+          }}
+        >
+          <DialogTitle>Editar nome</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+
+            </DialogContentText>
+            <TextField
+              autoFocus
+              required
+              margin="dense"
+              id="nome_lista"
+              name="nome_lista"
+              label="Digite um novo nome para a lista..."
+              type="text"
+              fullWidth
+              variant="standard"
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>Cancel</Button>
+            <Button type="submit">Subscribe</Button>
+          </DialogActions>
+        </Dialog>
+      </React.Fragment>
+    );
+  } else {
+    return (
+      <React.Fragment>
+        <div className='container-flex'>
+          <Button className='button-add' variant="text" onClick={handleClickOpen}>
+            <AddIcon className='button-add-icon' /> {textoBtn.toUpperCase()}
+          </Button>
+        </div>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          PaperProps={{
+            component: 'form',
+            onSubmit: (event) => {
+              event.preventDefault();
+              const formData = new FormData(event.currentTarget);
+              const formJson = Object.fromEntries(formData.entries());
+              adicionarLista(formJson)
+              handleClose();
+            },
+          }}
+        >
+          <DialogTitle>Editar nome</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+
+            </DialogContentText>
+            <TextField
+              autoFocus
+              required
+              margin="dense"
+              id="nome_lista"
+              name="nome_lista"
+              label="Digite um novo nome para a lista..."
+              type="text"
+              fullWidth
+              variant="standard"
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>Cancel</Button>
+            <Button type="submit">Subscribe</Button>
+          </DialogActions>
+        </Dialog>
+      </React.Fragment>
+    );
+  }
 }

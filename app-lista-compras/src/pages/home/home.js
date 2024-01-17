@@ -36,6 +36,7 @@ const Home = () => {
   }
 
   async function editarLista(listaId, dados) {
+    console.log(`home aqui ${listaId} e ${dados}`)
     try {
       await listasService.editarLista(listaId, dados)
       buscarListas();
@@ -62,9 +63,9 @@ const Home = () => {
   return (
     <main>
       <Titulo titulo={conteudoTitulo}></Titulo>
-      <Card listas={listas} buscarListas={buscarListas} apagarLista={apagarLista}></Card>
+      <Card listas={listas} buscarListas={buscarListas} apagarLista={apagarLista} editarLista={editarLista}></Card>
       {/* <ButtonAdd texto={'add'}></ButtonAdd> */}
-      <FormDialog texto={'add'} adicionarLista={adicionarLista}></FormDialog>
+      <FormDialog textoBtn={'add'} adicionarLista={adicionarLista}></FormDialog>
     </main>
   );
 }

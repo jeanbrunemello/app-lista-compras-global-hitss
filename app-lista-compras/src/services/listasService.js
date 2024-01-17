@@ -29,6 +29,7 @@ class ListasService {
   async editarLista(id, dados) {
     try {
       const response = await axios.patch(`${BASE_URL}/${PATH}/${id}`, dados);
+      console.log(`service aqui ${id} e ${dados}`)
       return response.data;
     } catch (error) {
       console.error(`Erro ao apagar lista: ${id}`, error);
