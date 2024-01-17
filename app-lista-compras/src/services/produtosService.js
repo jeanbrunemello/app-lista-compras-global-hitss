@@ -2,9 +2,9 @@
 import axios from 'axios';
 
 const BASE_URL = 'http://localhost:3000';
-const PATH = 'listas'
+const PATH = 'produtos'
 
-class ListasService {
+class ProdutoService {
 
   async buscarListas() {
     try {
@@ -16,7 +16,7 @@ class ListasService {
     }
   }
 
-  async buscarListaPorId(id) {
+  async buscarProdutoPorListaId(id) {
     try {
       const response = await axios.get(`${BASE_URL}/${PATH}/${id}`);
       return response.data
@@ -58,5 +58,5 @@ class ListasService {
   }
 }
 
-const listasService = new ListasService();
-export default listasService;
+const produtoService = new ProdutoService();
+export default produtoService;

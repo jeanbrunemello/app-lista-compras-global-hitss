@@ -1,4 +1,4 @@
-.menu_lista {
+.menu-lista {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -8,8 +8,10 @@
     font-weight: bold;
 }
 
-.menu_itens {
+.menu-itens {
     margin: 10px;
     list-style: none;
     cursor: pointer;
+    color: var(--secondary-color)
 }
+

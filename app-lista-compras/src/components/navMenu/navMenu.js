@@ -1,13 +1,16 @@
 import css from '../navMenu/style.css'
 import Logo from '../logo/logo';
+import { Link } from 'react-router-dom';
 
 const navOpt = ['HOME', 'LISTAS', 'LOGIN']
 
 function NavMenu() {
     return (
-        <ul className='menu_lista'>
+        <ul className='menu-lista'>
             {navOpt.map((opt) => (
-                <li className='menu_itens'><p>{opt}</p></li>
+                <Link to={opt.toLowerCase()}>
+                    <li className='menu-itens'><p>{opt}</p></li>
+                </Link>
             ))}
         </ul>
     );

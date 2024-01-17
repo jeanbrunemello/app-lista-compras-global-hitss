@@ -36,6 +36,10 @@ export default function FormDialog({ textoBtn, adicionarLista, editarLista, list
           open={open}
           onClose={handleClose}
           PaperProps={{
+            style: {
+              backgroundColor: 'var(--primary-color)',
+              color: 'var(--secondary-color)'
+            },
             component: 'form',
             onSubmit: (event) => {
               event.preventDefault();
@@ -60,10 +64,19 @@ export default function FormDialog({ textoBtn, adicionarLista, editarLista, list
               margin="dense"
               id="nome_lista"
               name="nome_lista"
-              label="Digite um novo nome para a lista..."
+              label="Digite um novo nome "
               type="text"
               fullWidth
               variant="standard"
+              InputProps={{
+                style: {
+                  color: 'var(--secondary-color)',
+                },
+              }}InputLabelProps={{
+                style: {
+                  color: 'var(--secondary-color)',
+                },
+              }}
             />
           </DialogContent>
           <DialogActions>
@@ -71,7 +84,7 @@ export default function FormDialog({ textoBtn, adicionarLista, editarLista, list
             <Button type="submit">Enviar</Button>
           </DialogActions>
         </Dialog>
-      </React.Fragment>
+      </React.Fragment >
     );
   } else {
     return (
@@ -85,6 +98,10 @@ export default function FormDialog({ textoBtn, adicionarLista, editarLista, list
           open={open}
           onClose={handleClose}
           PaperProps={{
+            style: {
+              backgroundColor: 'var(--primary-color)',
+              color: 'var(--secondary-color)'
+            },
             component: 'form',
             onSubmit: (event) => {
               event.preventDefault();
@@ -106,10 +123,19 @@ export default function FormDialog({ textoBtn, adicionarLista, editarLista, list
               margin="dense"
               id="nome_lista"
               name="nome_lista"
-              label="Digite um nome para a lista..."
+              label="Digite o nome da lista"
               type="text"
               fullWidth
               variant="standard"
+              InputProps={{
+                style: {
+                  color: 'var(--secondary-color)',
+                },
+              }}InputLabelProps={{
+                style: {
+                  color: 'var(--secondary-color)',
+                },
+              }}
             />
           </DialogContent>
           <DialogActions>

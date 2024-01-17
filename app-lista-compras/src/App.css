@@ -15,7 +15,8 @@
 
 .App {
   width: 100vw;
+  min-height: 100vh;
   min-width: var(--mobile);
-  height: 100vh;
   background-color: var(--primary-color);
+  overflow: hidden;
 }
