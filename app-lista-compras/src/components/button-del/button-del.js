@@ -7,14 +7,10 @@ import Home from '../../pages/home/home';
 
 function ButtonDelete (props){
 
-// async function apagarLista(listaId){
-//     await listasService.apagarListaPorId(listaId)
-// }
-
     return(
         <div className='container-flex'>
                 <IconButton
-                 //onClick={() => apagarLista(props.listaId)}
+                 onClick={() => props.apagarLista(props.listaId)}
                 className='button-add' color="primary" aria-label="add to shopping cart">
                     <DeleteIcon className='button-add-icon' /> 
                 </IconButton>

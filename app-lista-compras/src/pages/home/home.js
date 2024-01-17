@@ -4,9 +4,10 @@ import css from '../home/style.css';
 import Card from '../../components/card/card';
 import ListasService from '../../services/listasService';
 import ButtonAdd from '../../components/button-add/button-add';
-import FormDialog from '../../components/dialog/dialog';
+import FormDialog from '../../components/dialog/formDialog';
 import ButtonDelete from '../../components/button-del/button-del';
 import listasService from '../../services/listasService';
+import { Modal } from '@mui/material';
 
 
 const conteudoTitulo = 'app lista de compras';
@@ -25,6 +26,34 @@ const Home = () => {
     }
   }
 
+  async function apagarLista(listaId) {
+    try {
+      await listasService.apagarLista(listaId)
+      buscarListas();
+    } catch (error) {
+      console.error('Erro ao apagar lista:', error);
+    }
+  }
+
+  async function editarLista(listaId, dados) {
+    try {
+      await listasService.editarLista(listaId, dados)
+      buscarListas();
+    } catch (error) {
+      console.error('Erro ao editar lista:', error);
+    }
+  }
+
+  async function adicionarLista(dados) {
+    try {
+      await listasService.adicionarLista(dados)
+      buscarListas();
+    } catch (error) {
+      console.error('Erro ao editar lista:', error);
+    }
+  }
+
+
 
   useEffect(() => {
     buscarListas()
@@ -33,8 +62,9 @@ const Home = () => {
   return (
     <main>
       <Titulo titulo={conteudoTitulo}></Titulo>
-      <Card listas={listas} updateFunction={buscarListas}></Card>
-      <ButtonAdd texto={'add'}></ButtonAdd>
+      <Card listas={listas} buscarListas={buscarListas} apagarLista={apagarLista}></Card>
+      {/* <ButtonAdd texto={'add'}></ButtonAdd> */}
+      <FormDialog texto={'add'} adicionarLista={adicionarLista}></FormDialog>
     </main>
   );
 }

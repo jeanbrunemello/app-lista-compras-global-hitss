@@ -16,15 +16,36 @@ class ListasService {
     }
   }
 
-  async apagarListaPorId(id) {
+  async apagarLista(id) {
     try {
       const response = await axios.delete(`${BASE_URL}/${PATH}/${id}`);
       return response.data;
     } catch (error) {
-      console.error('Erro ao apagar lista:', error);
+      console.error(`Erro ao apagar lista: ${id}`, error);
       throw error;
     }
   }
+
+  async editarLista(id, dados) {
+    try {
+      const response = await axios.patch(`${BASE_URL}/${PATH}/${id}`, dados);
+      return response.data;
+    } catch (error) {
+      console.error(`Erro ao apagar lista: ${id}`, error);
+      throw error;
+    }
+  }
+
+  async adicionarLista(dados){
+    try {
+      const response = await axios.post(`${BASE_URL}/${PATH}`, dados);
+      return response.data;
+    } catch (error) {
+      console.error(`Erro ao criar lista: ${dados.lista_nome}`, error);
+      throw error;
+    }
+  }
+
 }
 
  const listasService = new ListasService();
