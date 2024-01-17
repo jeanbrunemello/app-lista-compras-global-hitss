@@ -5,14 +5,14 @@ import css from '../home/style.css';
 import ProdutoCard from '../../components/produtosCards/produtoCard';
 
 
-const conteudoTitulo = 'app lista de compras';
+
 
 const Produtos = () => {
 
 
   return (
     <main>
-      <Titulo titulo={conteudoTitulo}></Titulo>
+      <Titulo></Titulo>
       <ProdutoCard/>
     </main>
   );

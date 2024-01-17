@@ -13,6 +13,16 @@ class ListasController {
         }
     }
 
+    async buscarListaPorId(listaId) {
+        try {
+            const lista = await ListasService.buscarListaPorId(listaId);
+            console.log(lista)
+            return lista.data
+        } catch (error) {
+            console.error('Erro ao buscar listas:', error);
+        }
+    }
+
     async apagarLista(listaId, buscarListas) {
         try {
             await ListasService.apagarLista(listaId);

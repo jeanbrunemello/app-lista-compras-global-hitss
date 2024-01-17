@@ -1,12 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './style.css'
-
+import { useParams } from 'react-router-dom';
+import listasController from '../../controllers/listasController';
 
 
 const Titulo = (props) => {
+  const { id } = useParams();
+  const [titulo, setNomeLista] = useState('app lista de compras');
+
+  useEffect(() => {
+    async function obterNomeLista() {
+      try {
+        const lista = await listasController.buscarListaPorId(id);
+        
+        if (lista == "") {
+          if (lista != "") setNomeLista(lista.nome_lista);
+        }
+      } catch (error) {
+        console.error('Erro ao obter o nome da lista:', error);
+      }
+    }
+
+    obterNomeLista();
+  }, [id]);
+
   return (
     <div className='titulo'>
-      <h1>{props.titulo.toUpperCase()}</h1>
+      <h1>{titulo.toUpperCase()}</h1>
     </div>
   );
 }

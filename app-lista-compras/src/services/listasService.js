@@ -19,7 +19,7 @@ class ListasService {
   async buscarListaPorId(id) {
     try {
       const response = await axios.get(`${BASE_URL}/${PATH}/${id}`);
-      return response.data
+      return response
     } catch (error) {
       console.error('Erro ao buscar listas:', error);
       throw error;
