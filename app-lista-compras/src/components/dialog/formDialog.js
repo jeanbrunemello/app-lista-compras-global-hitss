@@ -67,8 +67,8 @@ export default function FormDialog({ textoBtn, adicionarLista, editarLista, list
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose}>Cancel</Button>
-            <Button type="submit">Subscribe</Button>
+            <Button onClick={handleClose}>Voltar</Button>
+            <Button type="submit">Enviar</Button>
           </DialogActions>
         </Dialog>
       </React.Fragment>
@@ -95,7 +95,7 @@ export default function FormDialog({ textoBtn, adicionarLista, editarLista, list
             },
           }}
         >
-          <DialogTitle>Editar nome</DialogTitle>
+          <DialogTitle>Adicionar nova lista</DialogTitle>
           <DialogContent>
             <DialogContentText>
 
@@ -106,15 +106,15 @@ export default function FormDialog({ textoBtn, adicionarLista, editarLista, list
               margin="dense"
               id="nome_lista"
               name="nome_lista"
-              label="Digite um novo nome para a lista..."
+              label="Digite um nome para a lista..."
               type="text"
               fullWidth
               variant="standard"
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose}>Cancel</Button>
-            <Button type="submit">Subscribe</Button>
+            <Button onClick={handleClose}>Voltar</Button>
+            <Button type="submit">Enviar</Button>
           </DialogActions>
         </Dialog>
       </React.Fragment>
