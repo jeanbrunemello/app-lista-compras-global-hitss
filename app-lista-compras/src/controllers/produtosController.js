@@ -21,7 +21,7 @@ class ProdutosController {
         }
     }
 
-    async adicionarProduto(listaId, dados) {
+    async adicionarProduto(dados) {
         try {
             await ProdutoService.adicionarProduto(dados);
 

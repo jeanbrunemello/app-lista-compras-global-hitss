@@ -52,7 +52,6 @@ export default function FormDialog({ textoBtn, adicionarLista, editarLista, list
                   quantidade_produto: formData.get('quantidade_produto'),
                   preco_produto: formData.get('preco_produto')
                 }
-                debugger
                 produtosController.editarProduto(produto.id, formJson).then(() => montarCards())
               } else {
                 editarLista(lista.id, formJson);
@@ -64,6 +63,7 @@ export default function FormDialog({ textoBtn, adicionarLista, editarLista, list
           <DialogTitle>Editar</DialogTitle>
           <DialogContent>
             <DialogContentText>
+
             </DialogContentText>
             {produto ? (
               <>
@@ -177,7 +177,19 @@ export default function FormDialog({ textoBtn, adicionarLista, editarLista, list
               event.preventDefault();
               const formData = new FormData(event.currentTarget);
               const formJson = Object.fromEntries(formData.entries());
-              adicionarLista(formJson)
+              if (produto) {
+                const formJson = {
+                  nome_produto: formData.get('nome_produto'),
+                  quantidade_produto: formData.get('quantidade_produto'),
+                  preco_produto: formData.get('preco_produto'),
+                  listas_compras_id: listaId
+                }
+                console.log(formJson)
+                produtosController.adicionarProduto(formJson).then(()=> montarCards())
+              } else {
+                adicionarLista(formJson)
+              }
+
               handleClose();
             },
           }}
@@ -187,13 +199,76 @@ export default function FormDialog({ textoBtn, adicionarLista, editarLista, list
             <DialogContentText>
 
             </DialogContentText>
-            <TextField
+            {produto ? (
+              <>
+                <TextField
+                  autoFocus
+                  required
+                  margin="dense"
+                  id="nome_produto"
+                  name="nome_produto"
+                  label="Digite um nome"
+                  type="text"
+                  fullWidth
+                  variant="standard"
+                  InputProps={{
+                    style: {
+                      color: 'var(--secondary-color)',
+                    },
+                  }} InputLabelProps={{
+                    style: {
+                      color: 'var(--secondary-color)',
+                    },
+                  }}
+                />
+                <TextField
+                  autoFocus
+                  required
+                  margin="dense"
+                  id="quantidade_produto"
+                  name="quantidade_produto"
+                  label="Quantidade"
+                  type="number"
+                  fullWidth
+                  variant="standard"
+                  InputProps={{
+                    style: {
+                      color: 'var(--secondary-color)',
+                    },
+                  }} InputLabelProps={{
+                    style: {
+                      color: 'var(--secondary-color)',
+                    },
+                  }}
+                />
+                <TextField
+                  autoFocus
+                  required
+                  margin="dense"
+                  id="preco_produto"
+                  name="preco_produto"
+                  label="R$"
+                  type="number"
+                  fullWidth
+                  variant="standard"
+                  InputProps={{
+                    style: {
+                      color: 'var(--secondary-color)',
+                    },
+                  }} InputLabelProps={{
+                    style: {
+                      color: 'var(--secondary-color)',
+                    },
+                  }}
+                />
+              </>
+            ) : <TextField
               autoFocus
               required
               margin="dense"
               id="nome_lista"
               name="nome_lista"
-              label="Digite o nome da lista"
+              label="Digite um novo nome "
               type="text"
               fullWidth
               variant="standard"
@@ -206,7 +281,7 @@ export default function FormDialog({ textoBtn, adicionarLista, editarLista, list
                   color: 'var(--secondary-color)',
                 },
               }}
-            />
+            />}
           </DialogContent>
           <DialogActions>
             <Button onClick={handleClose}>Voltar</Button>

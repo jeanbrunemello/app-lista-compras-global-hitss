@@ -61,9 +61,8 @@ const Listas = () => {
   return (
     <main>
       <Titulo></Titulo>
-      <Card listas={listas} buscarListas={buscarListas} apagarLista={apagarLista} editarLista={editarLista}></Card>
-      {/* <ButtonAdd texto={'add'}></ButtonAdd> */}
       <FormDialog textoBtn={'add'} adicionarLista={adicionarLista}></FormDialog>
+      <Card listas={listas} buscarListas={buscarListas} apagarLista={apagarLista} editarLista={editarLista}></Card>
     </main>
   );
 }
