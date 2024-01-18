@@ -12,10 +12,7 @@ const Titulo = (props) => {
     async function obterNomeLista() {
       try {
         const lista = await listasController.buscarListaPorId(id);
-        
-        if (lista == "") {
-          if (lista != "") setNomeLista(lista.nome_lista);
-        }
+        if (lista != "") setNomeLista(`Lista ${lista.nome_lista}`);
       } catch (error) {
         console.error('Erro ao obter o nome da lista:', error);
       }

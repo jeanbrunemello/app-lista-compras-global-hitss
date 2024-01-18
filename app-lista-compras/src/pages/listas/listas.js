@@ -10,8 +10,6 @@ import listasService from '../../services/listasService';
 import { Modal } from '@mui/material';
 
 
-const conteudoTitulo = 'app lista de compras';
-
 const Listas = () => {
   const [updateFunction, setUpdateFunction] = useState(null);
   const [listas, setListas] = useState([])
@@ -62,7 +60,7 @@ const Listas = () => {
 
   return (
     <main>
-      <Titulo titulo={conteudoTitulo}></Titulo>
+      <Titulo></Titulo>
       <Card listas={listas} buscarListas={buscarListas} apagarLista={apagarLista} editarLista={editarLista}></Card>
       {/* <ButtonAdd texto={'add'}></ButtonAdd> */}
       <FormDialog textoBtn={'add'} adicionarLista={adicionarLista}></FormDialog>
