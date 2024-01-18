@@ -1,10 +1,6 @@
 import DeleteIcon from '@mui/icons-material/Delete';
-import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 import { IconButton } from '@mui/material';
-import React, { useState } from 'react';
-import listasService from '../../../services/listasService';
-import Home from '../../../pages/home/home';
-import { useLocation, useParams } from 'react-router-dom';
+import React from 'react';
 import produtosController from '../../../controllers/produtosController';
 import listasController from '../../../controllers/listasController';
 

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import css from './style.css'
 import BotaoDelete from '../../botoes/botaoDelete/botaoDelete';
-import listasService from '../../../services/listasService';
 import BotaoEditar from '../../botoes/botaoEditar/botaoEditar';
 import FormDialog from '../../modais/formDialog/formDialog';
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import listasController from '../../../controllers/listasController';
 
 function Cards({ }) {

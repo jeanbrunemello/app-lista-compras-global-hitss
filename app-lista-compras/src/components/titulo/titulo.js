@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import style from './style.css'
 import { useParams } from 'react-router-dom';
-import listasController from '../../../controllers/listasController';
+import listasController from '../../controllers/listasController';
 
 
-const Titulo = (props) => {
+const Titulo = ({}) => {
   const { id } = useParams();
   const [titulo, setNomeLista] = useState('app lista de compras');
 

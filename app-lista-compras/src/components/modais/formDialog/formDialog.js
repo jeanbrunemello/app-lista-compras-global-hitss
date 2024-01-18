@@ -6,14 +6,10 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { IconButton } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
-import { formToJSON } from 'axios';
-import { Home } from '@mui/icons-material';
 import produtosController from '../../../controllers/produtosController';
 import listasController from '../../../controllers/listasController';
-import InputText from '../../inputs/inputText/inputText';
 
 export default function FormDialog({ textoBtn, item, produto, listaId, montarCards }) {
 

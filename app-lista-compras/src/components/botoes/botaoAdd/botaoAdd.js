@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import css from './style.css'
-import { IconButton, ThemeProvider, createTheme } from '@mui/material';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { IconButton } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
-import theme from '../../../assets/themes';
 import ModalComponent from '../../modais/formDialog/formDialog';
 
 function BotaoAdd(props) {

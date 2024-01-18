@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import css from './style.css'
 import BotaoDelete from '../../botoes/botaoDelete/botaoDelete';
 import BotaoEditar from '../../botoes/botaoEditar/botaoEditar';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import produtosController from '../../../controllers/produtosController';

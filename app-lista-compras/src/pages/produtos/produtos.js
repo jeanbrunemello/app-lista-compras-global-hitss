@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import Titulo from '../../components/header/titulo/titulo';
+import React, { useState } from 'react';
+import Titulo from '../../components/titulo/titulo';
 import css from '../home/style.css';
 import ProdutosCard from '../../components/cards/produtosCards/produtosCard';
 
@@ -23,7 +23,7 @@ const Produtos = () => {
   return (
     <main>
       <Titulo></Titulo>
-      <ProdutosCard obterListaId={obterListaId} obterProduto={obterProduto}  />
+      <ProdutosCard obterListaId={obterListaId} obterProduto={obterProduto}/>
     </main>
   );
 }
