@@ -3,10 +3,10 @@ import css from './style.css'
 import { IconButton, ThemeProvider, createTheme } from '@mui/material';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import AddIcon from '@mui/icons-material/Add';
-import theme from '../../assets/themes';
-import ModalComponent from '../dialog/formDialog';
+import theme from '../../../assets/themes';
+import ModalComponent from '../../modais/formDialog/formDialog';
 
-function ButtonAdd(props) {
+function BotaoAdd(props) {
 
     const [open, setOpen] = useState(false);
 
@@ -28,4 +28,4 @@ function ButtonAdd(props) {
     )
 }
 
-export default ButtonAdd;
+export default BotaoAdd;

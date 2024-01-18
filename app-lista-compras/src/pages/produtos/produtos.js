@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Titulo from '../../components/titulo/titulo';
+import Titulo from '../../components/header/titulo/titulo';
 import css from '../home/style.css';
-import ProdutoCard from '../../components/produtosCards/produtoCard';
-import FormDialog from '../../components/dialog/formDialog';
-import { useParams } from 'react-router-dom';
+import ProdutosCard from '../../components/cards/produtosCards/produtosCard';
 
 
 
@@ -25,8 +23,7 @@ const Produtos = () => {
   return (
     <main>
       <Titulo></Titulo>
-      {/* <FormDialog textoBtn={'add'} produto={true} listaId={listaId} ></FormDialog> */}
-      <ProdutoCard obterListaId={obterListaId} obterProduto={obterProduto}  />
+      <ProdutosCard obterListaId={obterListaId} obterProduto={obterProduto}  />
     </main>
   );
 }

@@ -1,5 +1,5 @@
 import css from './style.css'
-import Logo from '../logo/logo';
+import Logo from '../../logo/logo';
 import NavMenu from '../navMenu/navMenu';
 
 function Header() {

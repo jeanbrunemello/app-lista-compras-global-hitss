@@ -2,13 +2,13 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 import { IconButton } from '@mui/material';
 import React, { useState } from 'react';
-import listasService from '../../services/listasService';
-import Home from '../../pages/home/home';
+import listasService from '../../../services/listasService';
+import Home from '../../../pages/home/home';
 import { useLocation, useParams } from 'react-router-dom';
-import produtosController from '../../controllers/produtosController';
-import listasController from '../../controllers/listasController';
+import produtosController from '../../../controllers/produtosController';
+import listasController from '../../../controllers/listasController';
 
-function ButtonDelete({ produtoId, listaId, montarCards }) {
+function BotaoDelete({ produtoId, listaId, montarCards }) {
 
     async function handleClick() {
         if (produtoId) {
@@ -31,4 +31,4 @@ function ButtonDelete({ produtoId, listaId, montarCards }) {
     );
 }
 
-export default ButtonDelete;
+export default BotaoDelete;

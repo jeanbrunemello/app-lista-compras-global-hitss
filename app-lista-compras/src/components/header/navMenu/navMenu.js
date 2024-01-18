@@ -1,5 +1,5 @@
-import css from '../navMenu/style.css'
-import Logo from '../logo/logo';
+import css from './style.css'
+import Logo from '../../logo/logo';
 import { Link } from 'react-router-dom';
 
 const navOpt = ['HOME', 'LISTAS', 'LOGIN']

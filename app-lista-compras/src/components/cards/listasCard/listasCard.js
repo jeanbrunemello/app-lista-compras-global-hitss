@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import css from './style.css'
-import ButtonDelete from '../button-del/button-del';
-import listasService from '../../services/listasService';
-import ButtonEdit from '../button-edit/button-edit';
-import FormDialog from '../dialog/formDialog';
+import BotaoDelete from '../../botoes/botaoDelete/botaoDelete';
+import listasService from '../../../services/listasService';
+import BotaoEditar from '../../botoes/botaoEditar/botaoEditar';
+import FormDialog from '../../modais/formDialog/formDialog';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import listasController from '../../controllers/listasController';
+import listasController from '../../../controllers/listasController';
 
 function Cards({ }) {
 
@@ -35,10 +35,10 @@ function Cards({ }) {
                     </div>
                     <div className='botao-container'>
                         <div className='botao-edit'>
-                            <ButtonEdit item={lista} montarCards={montarCards} ></ButtonEdit>
+                            <BotaoEditar item={lista} montarCards={montarCards} ></BotaoEditar>
                         </div>
                         <div className='botao-delete'>
-                            <ButtonDelete listaId={lista.id} montarCards={montarCards}></ButtonDelete>
+                            <BotaoDelete listaId={lista.id} montarCards={montarCards}></BotaoDelete>
                         </div>
                     </div>
                 </div>

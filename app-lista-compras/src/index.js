@@ -8,9 +8,8 @@ import theme from './assets/themes'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Listas from './pages/listas/listas';
 import Home from './pages/home/home';
-import Header from './components/header/header';
-import ProdutoCard from './components/produtosCards/produtoCard';
 import Produtos from './pages/produtos/produtos';
+import Header from './components/header/header/header';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

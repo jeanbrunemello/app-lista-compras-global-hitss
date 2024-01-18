@@ -11,10 +11,11 @@ import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 import { formToJSON } from 'axios';
 import { Home } from '@mui/icons-material';
-import produtosController from '../../controllers/produtosController';
-import listasController from '../../controllers/listasController';
+import produtosController from '../../../controllers/produtosController';
+import listasController from '../../../controllers/listasController';
+import InputText from '../../inputs/inputText/inputText';
 
-export default function FormDialog({ textoBtn, adicionarLista, item, produto, listaId, montarCards }) {
+export default function FormDialog({ textoBtn, item, produto, listaId, montarCards }) {
 
   const [open, setOpen] = React.useState(false);
 
@@ -263,26 +264,28 @@ export default function FormDialog({ textoBtn, adicionarLista, item, produto, li
                   }}
                 />
               </>
-            ) : <TextField
-              autoFocus
-              required
-              margin="dense"
-              id="nome_lista"
-              name="nome_lista"
-              label="Digite um novo nome "
-              type="text"
-              fullWidth
-              variant="standard"
-              InputProps={{
-                style: {
-                  color: 'var(--secondary-color)',
-                },
-              }} InputLabelProps={{
-                style: {
-                  color: 'var(--secondary-color)',
-                },
-              }}
-            />}
+            ) :
+              <TextField
+                autoFocus
+                required
+                margin="dense"
+                id="nome_lista"
+                name="nome_lista"
+                label="Digite um novo nome "
+                type="text"
+                fullWidth
+                variant="standard"
+                InputProps={{
+                  style: {
+                    color: 'var(--secondary-color)',
+                  },
+                }} InputLabelProps={{
+                  style: {
+                    color: 'var(--secondary-color)',
+                  },
+                }}
+              />
+            }
           </DialogContent>
           <DialogActions>
             <Button onClick={handleClose}>Voltar</Button>

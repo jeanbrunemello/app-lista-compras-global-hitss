@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import css from './style.css'
-import ButtonDelete from '../button-del/button-del';
-import ButtonEdit from '../button-edit/button-edit';
+import BotaoDelete from '../../botoes/botaoDelete/botaoDelete';
+import BotaoEditar from '../../botoes/botaoEditar/botaoEditar';
 import { useNavigate, useParams } from 'react-router-dom';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import produtosController from '../../controllers/produtosController';
-import FormDialog from '../dialog/formDialog';
+import produtosController from '../../../controllers/produtosController';
+import FormDialog from '../../modais/formDialog/formDialog';
 
 
-function ProdutoCard({ obterListaId, obterProduto, atualizaCards }) {
+function ProdutosCard({ obterListaId, obterProduto, atualizaCards }) {
   const { id: listaId } = useParams();
   const [produtos, setProdutos] = useState([]);
 
@@ -50,10 +50,10 @@ function ProdutoCard({ obterListaId, obterProduto, atualizaCards }) {
 
           <div className='botao-container'>
             <div className='botao-edit'>
-              <ButtonEdit produto={produto} montarCards={montarCards} ></ButtonEdit>
+              <BotaoEditar produto={produto} montarCards={montarCards} ></BotaoEditar>
             </div>
             <div className='botao-delete'>
-              <ButtonDelete listaId={listaId} produtoId={produto.id} montarCards={montarCards}></ButtonDelete>
+              <BotaoDelete listaId={listaId} produtoId={produto.id} montarCards={montarCards}></BotaoDelete>
             </div>
           </div>
         </div>
@@ -62,4 +62,4 @@ function ProdutoCard({ obterListaId, obterProduto, atualizaCards }) {
   );
 }
 
-export default ProdutoCard;
+export default ProdutosCard;

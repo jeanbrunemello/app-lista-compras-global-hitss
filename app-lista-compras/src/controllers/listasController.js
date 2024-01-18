@@ -20,7 +20,7 @@ class ListasController {
         }
     }
 
-    async apagarLista(listaId, buscarListas) {
+    async apagarLista(listaId) {
         try {
             await ListasService.apagarLista(listaId);
         } catch (error) {
@@ -28,7 +28,7 @@ class ListasController {
         }
     }
 
-    async editarLista(listaId, dados, buscarListas) {
+    async editarLista(listaId, dados) {
         try {
             await ListasService.editarLista(listaId, dados);
         } catch (error) {
@@ -36,7 +36,7 @@ class ListasController {
         }
     }
 
-    async adicionarLista(dados, buscarListas) {
+    async adicionarLista(dados) {
         try {
             await ListasService.adicionarLista(dados);
         } catch (error) {
