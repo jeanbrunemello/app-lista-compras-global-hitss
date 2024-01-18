@@ -9,7 +9,7 @@ import produtosController from '../../controllers/produtosController';
 
 
 function ProdutoCard({ }) {
-  const { id } = useParams();
+  const { id: listaId } = useParams();
   const [produtos, setProdutos] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function ProdutoCard({ }) {
 
   async function montarCards() {
     try {
-      const response = await produtosController.buscarProdutosPorListaId(id)
+      const response = await produtosController.buscarProdutosPorListaId(listaId)
       setProdutos(response);
       // Adicione esta linha para alternar o estado de cada item na lista
       setProdutos(response.map(item => ({ ...item, iconeComprado: false })));
@@ -47,10 +47,10 @@ function ProdutoCard({ }) {
 
         <div className='botao-container'>
           <div className='botao-edit'>
-            <ButtonEdit listaId={produto.id}></ButtonEdit>
+            <ButtonEdit produto = {produto} montarCards={montarCards} listaId={listaId}></ButtonEdit>
           </div>
           <div className='botao-delete'>
-            <ButtonDelete></ButtonDelete>
+            <ButtonDelete listaId = {listaId} produtoId ={produto.id} montarCards={montarCards}></ButtonDelete>
           </div>
         </div>
       </div>

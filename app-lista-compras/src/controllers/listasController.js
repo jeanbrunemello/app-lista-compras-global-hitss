@@ -6,8 +6,6 @@ class ListasController {
             const listasObtidas = await ListasService.buscarListas();
             console.log(listasObtidas)
             return listasObtidas
-            // console.log("DADOS RECEBIDOS:", listasObtidas);
-            // setListas(listasObtidas);
         } catch (error) {
             console.error('Erro ao buscar listas:', error);
         }

@@ -8,14 +8,16 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 function Card({ listas, buscarListas, apagarLista, editarLista }) {
   const navigate = useNavigate();
-  
+
   return (
     listas.map((lista) => (
-      <div key={lista.id} className='card' onClick={() => navigate(`/listas/${lista.id}`, { state: { nome_lista: lista.nome_lista } })}>
-        <p>{lista.nome_lista}</p>
+      <div key={lista.id} className='card' >
+        <div className="card-nome" onClick={() => navigate(`/listas/${lista.id}`, { state: { nome_lista: lista.nome_lista } })}>
+          <p>{lista.nome_lista}</p>
+        </div>
         <div className='botao-container'>
           <div className='botao-edit'>
-            <ButtonEdit listaId={lista.id} buscarListas={buscarListas} editarLista={editarLista}></ButtonEdit>
+            <ButtonEdit lista={lista} buscarListas={buscarListas} editarLista={editarLista}></ButtonEdit>
           </div>
           <div className='botao-delete'>
             <ButtonDelete listaId={lista.id} buscarListas={buscarListas} apagarLista={apagarLista}></ButtonDelete>

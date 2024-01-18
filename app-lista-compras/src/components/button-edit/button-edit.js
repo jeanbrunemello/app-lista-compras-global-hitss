@@ -6,16 +6,12 @@ import listasService from '../../services/listasService';
 import Home from '../../pages/home/home';
 import FormDialog from '../dialog/formDialog';
 
-function ButtonEdit({listaId, buscarListas, editarLista}) {
- var listaId = listaId
+function ButtonEdit({ lista, buscarListas, editarLista, produto, montarCards }) {
+
     return (
-        <div onClick={()=> listaId = listaId} className='container-flex'>
-            {/* <IconButton
-                
-                className='button-add' color="primary" aria-label="add to shopping cart">
-                <EditIcon className='button-add-icon' />
-            </IconButton> */}
-            <FormDialog textoBtn={''} listaId={listaId} editarLista={editarLista}></FormDialog>
+        <div
+        className='container-flex'>
+            <FormDialog textoBtn={''} lista={lista} produto={produto} editarLista={editarLista} montarCards={montarCards}></FormDialog>
         </div>
     );
 }

@@ -16,12 +16,12 @@ class ProdutoService {
     }
   }
 
-  async buscarProdutoPorListaId(id) {
+  async buscarProdutosPorListaId(Listaid) {
     try {
-      const response = await axios.get(`${BASE_URL}/${PATH}/${id}`);
+      const response = await axios.get(`${BASE_URL}/${PATH}/${Listaid}`);
       return response.data
     } catch (error) {
-      console.error(`Erro ao buscar produtos da lista ${id}:`, error);
+      console.error(`Erro ao buscar produtos da lista ${Listaid}:`, error);
       throw error;
     }
   }
@@ -31,28 +31,28 @@ class ProdutoService {
       const response = await axios.post(`${BASE_URL}/${PATH}`, dados);
       return response.data;
     } catch (error) {
-      console.error(`Erro ao criar lista: ${dados.lista_nome}`, error);
+      console.error(`Erro ao criar produto: ${dados.produto_nome}`, error);
       throw error;
     }
   }
 
-  async editarProduto(id, dados) {
+  async editarProduto(produtoId, dados) {
     try {
-      const response = await axios.patch(`${BASE_URL}/${PATH}/${id}`, dados);
-      console.log(`service aqui ${id} e ${dados}`)
+      const response = await axios.patch(`${BASE_URL}/${PATH}/${produtoId}`, dados);
+      console.log(`service aqui ${produtoId} e ${dados}`)
       return response.data;
     } catch (error) {
-      console.error(`Erro ao apagar lista: ${id}`, error);
+      console.error(`Erro ao apagar produto: ${produtoId}`, error);
       throw error;
     }
   }
 
-  async apagarProduto(id) {
+  async apagarProduto(produtoId) {
     try {
-      const response = await axios.delete(`${BASE_URL}/${PATH}/${id}`);
+      const response = await axios.delete(`${BASE_URL}/${PATH}/${produtoId}`);
       return response.data;
     } catch (error) {
-      console.error(`Erro ao apagar lista: ${id}`, error);
+      console.error(`Erro ao apagar produto: ${produtoId}`, error);
       throw error;
     }
   }
