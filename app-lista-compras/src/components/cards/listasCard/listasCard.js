@@ -6,7 +6,7 @@ import FormDialog from '../../modais/formDialog/formDialog';
 import { useNavigate} from 'react-router-dom';
 import listasController from '../../../controllers/listasController';
 
-function Cards() {
+function ListasCard() {
 
     const [listas, setListas] = useState([])
     const navigate = useNavigate();
@@ -46,4 +46,4 @@ function Cards() {
     );
 }
 
-export default Cards;
+export default ListasCard;
