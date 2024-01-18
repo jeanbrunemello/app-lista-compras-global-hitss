@@ -1,8 +1,7 @@
-.container-flex{
+.container-flex {
     display: flex;
     justify-content: flex-end;
     margin: 20px 10px;
- 
 }
 
 .button-add {

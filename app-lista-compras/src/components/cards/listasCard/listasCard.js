@@ -6,7 +6,7 @@ import FormDialog from '../../modais/formDialog/formDialog';
 import { useNavigate} from 'react-router-dom';
 import listasController from '../../../controllers/listasController';
 
-function Cards({ }) {
+function Cards() {
 
     const [listas, setListas] = useState([])
     const navigate = useNavigate();

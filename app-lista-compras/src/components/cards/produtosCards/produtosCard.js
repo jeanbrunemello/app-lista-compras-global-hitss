@@ -9,7 +9,8 @@ import produtosController from '../../../controllers/produtosController';
 import FormDialog from '../../modais/formDialog/formDialog';
 
 
-function ProdutosCard({ obterListaId, obterProduto, atualizaCards }) {
+function ProdutosCard({ obterListaId }) {
+  
   const { id: listaId } = useParams();
   const [produtos, setProdutos] = useState([]);
 

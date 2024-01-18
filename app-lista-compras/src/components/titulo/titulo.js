@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import listasController from '../../controllers/listasController';
 
 
-const Titulo = ({}) => {
+const Titulo = () => {
   const { id } = useParams();
   const [titulo, setNomeLista] = useState('app lista de compras');
 

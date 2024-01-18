@@ -21,10 +21,10 @@ function InputText(idValor, nameValor, labelValor, typeValor) {
                   autoFocus
                   required
                   margin="dense"
-                  id="nome_produto"
-                  name="nome_produto"
-                  label="Digite um nome"
-                  type="text"
+                  id={idValor}
+                  name={nameValor}
+                  label={labelValor}
+                  type={typeValor}
                   fullWidth
                   variant="standard"
                   InputProps={{

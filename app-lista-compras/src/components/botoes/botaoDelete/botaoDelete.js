@@ -6,7 +6,7 @@ import listasController from '../../../controllers/listasController';
 
 function BotaoDelete({ produtoId, listaId, montarCards }) {
 
-    async function handleClick() {
+    async function aoClicar() {
         if (produtoId) {
             await produtosController.apagarProduto(produtoId)
             montarCards(listaId);
@@ -19,7 +19,7 @@ function BotaoDelete({ produtoId, listaId, montarCards }) {
     return (
         <div className='container-flex'>
             <IconButton
-                onClick={handleClick}
+                onClick={aoClicar}
                 className='button-add' color="primary" aria-label="add to shopping cart">
                 <DeleteIcon className='button-add-icon' />
             </IconButton>

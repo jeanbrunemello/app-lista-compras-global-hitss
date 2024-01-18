@@ -10,7 +10,7 @@ const Produtos = () => {
 
   const [listaId, setListaId] = useState(null);
   const [produto, setProduto] = useState(null);
-  const [atualizaCards, SetAtualizarCards] = useState(null);
+
 
   const obterListaId = (id) => {
     setListaId(id);

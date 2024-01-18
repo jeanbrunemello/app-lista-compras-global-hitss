@@ -1,9 +1,10 @@
 import css from './style.css'
 import { Link } from 'react-router-dom';
 
-const navOpt = ['HOME', 'LISTAS', 'LOGIN']
 
 function NavMenu() {
+    const navOpt = ['HOME', 'LISTAS', 'LOGIN']
+    
     return (
         <ul className='menu-lista'>
             {navOpt.map((opt) => (

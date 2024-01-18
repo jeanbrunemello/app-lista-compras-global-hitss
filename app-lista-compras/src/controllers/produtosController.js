@@ -1,6 +1,7 @@
 import ProdutoService from '../services/produtosService';
 
 class ProdutosController {
+
     async buscarProdutos() {
         try {
             const produtosObtidos = await ProdutoService.buscarProdutos();
@@ -24,7 +25,6 @@ class ProdutosController {
     async adicionarProduto(dados) {
         try {
             await ProdutoService.adicionarProduto(dados);
-
         } catch (error) {
             console.error('Erro ao adicionar produto:', error);
         }
@@ -34,13 +34,10 @@ class ProdutosController {
         console.log(`home aqui ${produtoId} e ${dados}`);
         try {
             await ProdutoService.editarProduto(produtoId, dados);
-
         } catch (error) {
             console.error('Erro ao editar produto:', error);
         }
     }
-
-
 
     async apagarProduto(ProdutoId) {
         try {
@@ -49,7 +46,6 @@ class ProdutosController {
             console.error('Erro ao apagar produto:', error);
         }
     }
-
 }
 
 export default new ProdutosController();
