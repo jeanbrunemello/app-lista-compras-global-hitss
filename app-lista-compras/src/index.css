@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--primary-color);
-    min-width: 320px;
+  min-width: 320px;
 
 }
 
@@ -22,6 +22,6 @@ code {
   overflow: hidden;
 }
 
-.App-header{
+.App-header {
   background-color: var(--primary-color);
 }

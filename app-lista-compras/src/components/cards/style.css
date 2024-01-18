@@ -12,18 +12,20 @@
     justify-content: space-between;
 }
 
-.card-nome{
-    width: 100%;
-}
-.card-link p{
+.card-nome {
     width: 100%;
 }
 
-.card:hover{
+.card-link p {
+    width: 100%;
+}
+
+.card:hover {
     cursor: pointer;
 }
 
-.botao-delete, .botao-edit{
+.botao-delete,
+.botao-edit {
     margin: 0;
     padding: 0;
     width: 36px;
@@ -34,6 +36,36 @@
     border-radius: 360px;
 }
 
-.botao-container{
+.botao-container {
     display: flex;
+}
+
+
+
+@media only screen and (min-width: 576px) {
+    .card-container {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .card-container {
+        max-width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .card-container {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .card-container {
+        max-width: 45%;
+        margin: 0 auto;
+    }
 }

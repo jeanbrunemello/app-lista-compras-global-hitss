@@ -1,7 +1,8 @@
-body{
+body {
     min-width: 320px;
 }
-.card-conteudo{
+
+.card-conteudo {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -9,21 +10,54 @@ body{
     justify-content: space-evenly;
 }
 
-.card-conteudo_nome{
-width: 80%;
-padding: 10px 5px;
-overflow-wrap: break-word;
-}
-
-.card-conteudo_container{
-    display: flex;
-    align-items: center;
-    justify-content:space-evenly;
+.card-conteudo_nome {
+    width: 80%;
+    padding: 10px 5px;
     overflow-wrap: break-word;
 }
 
-.card-conteudo_container p{
+.card-conteudo_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow-wrap: break-word;
+}
+
+.card-conteudo_container p {
     overflow-wrap: break-word;
     text-align: center;
     word-break: break-word;
+}
+
+
+@media only screen and (min-width: 576px) {
+    .card-container {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .card-conteudo_container p {
+        margin: 0 10px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .card-container {
+        max-width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .card-container {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .card-container {
+        max-width: 45%;
+        margin: 0 auto;
+    }
 }

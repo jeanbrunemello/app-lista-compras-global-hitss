@@ -8,10 +8,10 @@ import Cards from '../../components/cards/card';
 const Listas = () => {
 
   return (
-    <main>
+    <div>
       <Titulo></Titulo>
       <Cards></Cards>
-    </main>
+    </div>
   );
 }
 

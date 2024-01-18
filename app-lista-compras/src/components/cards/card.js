@@ -26,7 +26,7 @@ function Cards({ }) {
     }, []);
 
     return (
-        <div>
+        <div className='card-container'>
             <FormDialog textoBtn={'add'} montarCards={montarCards}></FormDialog>
             {listas.map((lista) => (
                 <div key={lista.id} className='card' >

@@ -33,7 +33,7 @@ function ProdutoCard({ obterListaId, obterProduto, atualizaCards }) {
   };
 
   return (
-    <div>
+    <div className='card-container'>
       <FormDialog textoBtn={'add'} produto={true} listaId={listaId} montarCards={montarCards}></FormDialog>
       {produtos.map((produto, index) => (
         <div key={produto.id} className='card'>

@@ -17,17 +17,18 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-    <header className="App-header">
-        <Header></Header>
-      </header>
-        <Routes>
-          <Route path="/listas" element={<Listas/>}></Route>
-          <Route path="/listas/:id" element={<Produtos />} ></Route>
-          <Route path="/home" element={<Home />}></Route>
-          <Route path="/" element={<App />} ></Route>
-        </Routes>
+        <header className="App-header">
+          <Header></Header>
+        </header>
+        <main>
+          <Routes>
+            <Route path="/listas" element={<Listas />}></Route>
+            <Route path="/listas/:id" element={<Produtos />} ></Route>
+            <Route path="/home" element={<Home />}></Route>
+            <Route path="/" element={<App />} ></Route>
+          </Routes>
+        </main>
       </BrowserRouter>
-
     </ThemeProvider>
   </React.StrictMode>
 );
