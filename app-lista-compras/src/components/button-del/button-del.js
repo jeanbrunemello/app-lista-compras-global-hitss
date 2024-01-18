@@ -6,16 +6,24 @@ import listasService from '../../services/listasService';
 import Home from '../../pages/home/home';
 import { useLocation, useParams } from 'react-router-dom';
 import produtosController from '../../controllers/produtosController';
+import listasController from '../../controllers/listasController';
 
-function ButtonDelete(props) {
+function ButtonDelete({ produtoId, listaId, montarCards }) {
+
+    async function handleClick() {
+        if (produtoId) {
+            await produtosController.apagarProduto(produtoId)
+            montarCards(listaId);
+        } else {
+            await listasController.apagarLista(listaId)
+            montarCards();
+        }
+    }
 
     return (
         <div className='container-flex'>
             <IconButton
-                //onClick={ () => {props.apagarLista(props.listaId)}}
-                onClick={props.produtoId ? () => { 
-                    produtosController.apagarProduto(props.produtoId). then(()=> props.montarCards(props.listaId))
-                    } : () => props.apagarLista(props.listaId)}
+                onClick={handleClick}
                 className='button-add' color="primary" aria-label="add to shopping cart">
                 <DeleteIcon className='button-add-icon' />
             </IconButton>

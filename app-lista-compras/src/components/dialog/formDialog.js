@@ -12,8 +12,9 @@ import EditIcon from '@mui/icons-material/Edit';
 import { formToJSON } from 'axios';
 import { Home } from '@mui/icons-material';
 import produtosController from '../../controllers/produtosController';
+import listasController from '../../controllers/listasController';
 
-export default function FormDialog({ textoBtn, adicionarLista, editarLista, lista, produto, listaId, montarCards }) {
+export default function FormDialog({ textoBtn, adicionarLista, item, produto, listaId, montarCards }) {
 
   const [open, setOpen] = React.useState(false);
 
@@ -54,7 +55,7 @@ export default function FormDialog({ textoBtn, adicionarLista, editarLista, list
                 }
                 produtosController.editarProduto(produto.id, formJson).then(() => montarCards())
               } else {
-                editarLista(lista.id, formJson);
+                listasController.editarLista(item.id, formJson).then(() => montarCards());
               }
               handleClose();
             },
@@ -185,9 +186,9 @@ export default function FormDialog({ textoBtn, adicionarLista, editarLista, list
                   listas_compras_id: listaId
                 }
                 console.log(formJson)
-                produtosController.adicionarProduto(formJson).then(()=> montarCards())
+                produtosController.adicionarProduto(formJson).then(() => montarCards())
               } else {
-                adicionarLista(formJson)
+                listasController.adicionarLista(formJson).then(() => montarCards())
               }
 
               handleClose();

@@ -4,7 +4,6 @@ class ListasController {
     async buscarListas() {
         try {
             const listasObtidas = await ListasService.buscarListas();
-            console.log(listasObtidas)
             return listasObtidas
         } catch (error) {
             console.error('Erro ao buscar listas:', error);
@@ -24,17 +23,14 @@ class ListasController {
     async apagarLista(listaId, buscarListas) {
         try {
             await ListasService.apagarLista(listaId);
-            buscarListas();
         } catch (error) {
             console.error('Erro ao apagar lista:', error);
         }
     }
 
     async editarLista(listaId, dados, buscarListas) {
-        console.log(`home aqui ${listaId} e ${dados}`);
         try {
             await ListasService.editarLista(listaId, dados);
-            buscarListas();
         } catch (error) {
             console.error('Erro ao editar lista:', error);
         }
@@ -43,7 +39,6 @@ class ListasController {
     async adicionarLista(dados, buscarListas) {
         try {
             await ListasService.adicionarLista(dados);
-            buscarListas();
         } catch (error) {
             console.error('Erro ao adicionar lista:', error);
         }

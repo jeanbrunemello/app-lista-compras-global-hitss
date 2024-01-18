@@ -6,12 +6,12 @@ import listasService from '../../services/listasService';
 import Home from '../../pages/home/home';
 import FormDialog from '../dialog/formDialog';
 
-function ButtonEdit({ lista, buscarListas, editarLista, produto, montarCards }) {
+function ButtonEdit({ item, produto, montarCards }) {
 
     return (
         <div
         className='container-flex'>
-            <FormDialog textoBtn={''} lista={lista} produto={produto} editarLista={editarLista} montarCards={montarCards}></FormDialog>
+            <FormDialog textoBtn={''} item={item} produto={produto} montarCards={montarCards}></FormDialog>
         </div>
     );
 }
