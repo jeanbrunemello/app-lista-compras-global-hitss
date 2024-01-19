@@ -47,8 +47,8 @@ export default function FormDialog({ textoBtn, item, produto, listaId, montarCar
               if (produto) {
                 const formJson = {
                   nome_produto: formData.get('nome_produto'),
-                  quantidade_produto: formData.get('quantidade_produto'),
-                  preco_produto: formData.get('preco_produto')
+                  quantidade_produto: parseInt(formData.get('quantidade_produto')),
+                  preco_produto: parseFloat(formData.get('preco_produto'))
                 }
                 produtosController.editarProduto(produto.id, formJson).then(() => montarCards())
               } else {
@@ -178,8 +178,8 @@ export default function FormDialog({ textoBtn, item, produto, listaId, montarCar
               if (produto) {
                 const formJson = {
                   nome_produto: formData.get('nome_produto'),
-                  quantidade_produto: formData.get('quantidade_produto'),
-                  preco_produto: formData.get('preco_produto'),
+                  quantidade_produto: parseInt(formData.get('quantidade_produto')),
+                  preco_produto: parseFloat(formData.get('preco_produto')),
                   listas_compras_id: listaId
                 }
                 console.log(formJson)

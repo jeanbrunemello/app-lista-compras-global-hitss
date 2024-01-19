@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 function NavMenu() {
-    const navOpt = ['HOME', 'LISTAS', 'LOGIN']
+    const navOpt = ['LISTAS', 'LOGIN']
     
     return (
         <ul className='menu-lista'>

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import css from './style.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import listasController from '../../controllers/listasController';
 import { TextField } from '@mui/material';
 import BotaoEditar from '../../components/botoes/botaoEditar/botaoEditar';
@@ -13,9 +13,11 @@ const Home = () => {
   return (
     <div>
       <Titulo></Titulo>
-      <p>Seu app de listas de mercado</p>
+      <p>Clique para iniciar</p>
       <div className='imagem-flex'>
+        <Link to="/listas">
         <img className='icone-compras' src={GroceryBagSvg} />
+        </Link>
       </div>
     </div>
   );
