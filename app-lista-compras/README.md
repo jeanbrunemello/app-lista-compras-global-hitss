@@ -1,12 +1,3 @@
-Antes de abrir o projeto, é necessário ter o nodeJS instalado, que pode ser baixado em https://nodejs.org/.
-
-Também é necessário instalar o Node Package Manager. Isso pode ser feito com a linha de comando npm i npm.
-
-Após instalar o nodeJs, 
-
-npm install react-router-dom
-npm install axios
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
