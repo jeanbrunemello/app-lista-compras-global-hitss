@@ -1,3 +1,9 @@
+Antes de abrir o projeto, é necessário ter o nodeJS instalado, que pode ser baixado em https://nodejs.org/.
+
+Também é necessário instalar o Node Package Manager. Isso pode ser feito com a linha de comando npm i npm.
+
+Após instalar o nodeJs, 
+
 npm install react-router-dom
 npm install axios
 
