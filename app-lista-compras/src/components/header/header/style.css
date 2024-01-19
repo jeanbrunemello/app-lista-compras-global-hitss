@@ -9,3 +9,30 @@
     width: 100%;
     align-items: center;
 }
+
+@media (min-width: 576px) {
+    .flex {
+        width: 80%;
+    }
+}
+
+@media (min-width: 768px) {
+    .flex {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+
+
+@media (min-width: 1024px) {
+    .flex {
+        width: 60%;
+    }
+}
+
+@media (min-width: 13200px) {
+    .flex {
+        width: 50%;
+    }
+}

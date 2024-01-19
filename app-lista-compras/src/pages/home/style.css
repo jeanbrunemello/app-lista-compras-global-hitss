@@ -1,0 +1,19 @@
+p {
+    color: var(--secondary-color);
+    text-align: center;
+    font-weight: bold;
+}
+
+.imagem-flex{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icone-compras {
+    filter: brightness(0) saturate(100%) invert(86%) sepia(7%) saturate(4718%) hue-rotate(162deg) brightness(95%) contrast(107%);
+    height: 500px;
+    width: 300px;
+
+}
