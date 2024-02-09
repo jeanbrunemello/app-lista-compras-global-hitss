@@ -4,6 +4,8 @@ class ListasController {
     async buscarListas() {
         try {
             const listasObtidas = await ListasService.buscarListas();
+            console.log(listasObtidas)
+            console.log("AQQQQQQQ")
             return listasObtidas
         } catch (error) {
             console.error('Erro ao buscar listas:', error);

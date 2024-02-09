@@ -10,6 +10,8 @@ import Listas from './pages/listas/listas';
 import Home from './pages/home/home';
 import Produtos from './pages/produtos/produtos';
 import Header from './components/header/header/header';
+import Login from './pages/login/login';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,6 +26,7 @@ root.render(
             <Route path="/listas" element={<Listas />}></Route>
             <Route path="/listas/:id" element={<Produtos />} ></Route>
             <Route path="/home" element={<Home />}></Route>
+            <Route path='/login' element={<Login />} ></Route>
             <Route path="/" element={<App />} ></Route>
           </Routes>
         </main>

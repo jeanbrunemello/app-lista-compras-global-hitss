@@ -4,11 +4,15 @@ import { useParams } from 'react-router-dom';
 import listasController from '../../controllers/listasController';
 
 
-const Titulo = () => {
+const Titulo = ({texto}) => {
   const { id } = useParams();
   const [titulo, setNomeLista] = useState('app lista de compras');
-
+  
   useEffect(() => {
+    if(texto){
+      setNomeLista(texto)
+    }
+    
     async function obterNomeLista() {
       try {
         const lista = await listasController.buscarListaPorId(id);

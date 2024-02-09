@@ -20,4 +20,5 @@
   min-width: var(--mobile);
   background-color: var(--primary-color);
   overflow: hidden;
+  min-width: 320px;
 }

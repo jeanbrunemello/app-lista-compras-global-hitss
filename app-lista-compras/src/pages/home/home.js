@@ -11,7 +11,7 @@ import GroceryBagSvg from '../../assets/img/grocery_bag.svg';
 const Home = () => {
 
   return (
-    <div>
+    <div className='home-container'>
       <Titulo></Titulo>
       <p>Clique para iniciar</p>
       <div className='imagem-flex'>

@@ -6,6 +6,7 @@ import FormDialog from '../../modais/formDialog/formDialog';
 import listasController from '../../../controllers/listasController';
 import BotaoEditar from '../../botoes/botaoEditar/botaoEditar';
 import BotaoDelete from '../../botoes/botaoDelete/botaoDelete';
+import ContainerCard from '../ContainerCard/containerCard';
 
 function ListasCard() {
 
@@ -13,7 +14,7 @@ function ListasCard() {
     const [listaOriginal, setListaOriginal] = useState([]);
     const [pesquisa, setPesquisa] = useState('');
     const navigate = useNavigate();
-    const inputValueRef = useRef('');
+    const termoPesquisa = useRef('');
 
     async function montarCards() {
         try {
@@ -26,16 +27,16 @@ function ListasCard() {
     }
 
     const aoInputChange = (event) => {
-        inputValueRef.current = event.target.value;
-        if (!inputValueRef.current) {
+        termoPesquisa.current = event.target.value;
+        if (!termoPesquisa.current) {
             setListas(listaOriginal);
         } else {
             const listasFiltradas = listaOriginal.filter((lista) =>
-                lista.nome_lista.toLowerCase().includes(inputValueRef.current.toLowerCase())
+                lista.nome_lista.toLowerCase().includes(termoPesquisa.current.toLowerCase())
             );
             setListas(listasFiltradas);
         }
-        setPesquisa(inputValueRef.current);
+        setPesquisa(termoPesquisa.current);
     };
     useEffect(() => {
         montarCards();
@@ -66,7 +67,7 @@ function ListasCard() {
                     }}
                 />
             </div>
-            <div className='card-container'>
+            <ContainerCard>
                 <FormDialog textoBtn={'add'} montarCards={montarCards}></FormDialog>
                 {listas.map((lista) => (
                     <div key={lista.id} className='card' >
@@ -83,7 +84,7 @@ function ListasCard() {
                         </div>
                     </div>
                 ))}
-            </div>
+            </ContainerCard>
         </div>
     );
 }
