@@ -11,7 +11,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import produtosController from '../../../controllers/produtosController';
 import listasController from '../../../controllers/listasController';
 
-export default function FormDialog({ textoBtn, item, produto, listaId, montarCards }) {
+export default function FormDialog({ textoBtn, item, produto, listaId, montarCards, usuario_lista = 1 }) {
 
   const [open, setOpen] = React.useState(false);
 
@@ -180,11 +180,16 @@ export default function FormDialog({ textoBtn, item, produto, listaId, montarCar
                   nome_produto: formData.get('nome_produto'),
                   quantidade_produto: parseInt(formData.get('quantidade_produto')),
                   preco_produto: parseFloat(formData.get('preco_produto')),
-                  listas_compras_id: listaId
+                  listas_compras_id: listaId,
+                  //addicionar logica do click de obtido
+                  obtido_produto: true
                 }
                 console.log(formJson)
                 produtosController.adicionarProduto(formJson).then(() => montarCards())
               } else {
+                //adicoinar logica de enviar o numero do id do usuario pro back
+                formJson.usuario_lista = usuario_lista
+                console.log(formJson)
                 listasController.adicionarLista(formJson).then(() => montarCards())
               }
 
