@@ -22,8 +22,11 @@ function ProdutosCard({ obterListaId }) {
   async function montarCards() {
     try {
       const response = await produtosController.buscarProdutosPorListaId(listaId)
+      console.log("resposta dos carrinhos")
+      console.log(response[0].obtido_produto)
       setProdutos(response);
-      setProdutos(response.map(item => ({ ...item, iconeComprado: false })));
+      // setProdutos(response.map(item => ({ ...item, iconeComprado: false })));
+      setProdutos(response.map(item => ({ ...item, iconeComprado: item.obtido_produto })));
     } catch (error) {
       console.error("Error:", error);
     }
