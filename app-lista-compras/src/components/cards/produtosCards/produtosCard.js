@@ -22,19 +22,27 @@ function ProdutosCard({ obterListaId }) {
   async function montarCards() {
     try {
       const response = await produtosController.buscarProdutosPorListaId(listaId)
-      console.log("resposta dos carrinhos")
-      console.log(response[0].obtido_produto)
       setProdutos(response);
-      // setProdutos(response.map(item => ({ ...item, iconeComprado: false })));
       setProdutos(response.map(item => ({ ...item, iconeComprado: item.obtido_produto })));
-    } catch (error) {
+      } catch (error) {
       console.error("Error:", error);
     }
   }
 
   const handleClick = (index) => {
-    setProdutos(produtos.map((produto, i) => i === index ? { ...produto, iconeComprado: !produto.iconeComprado } : produto));
-  };
+
+    setProdutos(produtos => produtos.map((produto, i) => i === index ? { 
+        ...produto, 
+        iconeComprado: !produto.iconeComprado,  
+        obtido_produto: produto.iconeComprado
+    } : produto));
+
+    // const produtoAtualizado = produtos[index]
+    const produtoAtualizado = {obtido_produto: produtos[index].obtido_produto}
+    console.log("aaaaaaa")
+    console.log(produtoAtualizado)
+    produtosController.editarProduto(produtos[index].id, produtoAtualizado);
+};
 
   return (
     <div className='card-container'>
