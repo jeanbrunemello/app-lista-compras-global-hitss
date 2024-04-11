@@ -7,12 +7,14 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import produtosController from '../../../controllers/produtosController';
 import FormDialog from '../../modais/formDialog/formDialog';
+import Button from '@mui/material/Button';
 
 
 function ProdutosCard({ obterListaId }) {
-  
+
   const { id: listaId } = useParams();
   const [produtos, setProdutos] = useState([]);
+  const [todosMarcados, setTodosMarcados] = useState(false); // Estado para controlar se todos os ícones estão marcados
 
   useEffect(() => {
     montarCards();
@@ -24,25 +26,30 @@ function ProdutosCard({ obterListaId }) {
       const response = await produtosController.buscarProdutosPorListaId(listaId)
       setProdutos(response);
       setProdutos(response.map(item => ({ ...item, iconeComprado: item.obtido_produto })));
-      } catch (error) {
+    } catch (error) {
       console.error("Error:", error);
     }
   }
 
+  const desmarcarTodos = () => {
+    setProdutos(produtos => produtos.map(produto => ({
+      ...produto,
+      iconeComprado: false, // Define o valor de iconeComprado para o valor de todosMarcados
+      obtido_produto: false // Define o valor de obtido_produto para o valor de todosMarcados
+    })));
+  }
+
   const handleClick = (index) => {
 
-    setProdutos(produtos => produtos.map((produto, i) => i === index ? { 
-        ...produto, 
-        iconeComprado: !produto.iconeComprado,  
-        obtido_produto: produto.iconeComprado
+    setProdutos(produtos => produtos.map((produto, i) => i === index ? {
+      ...produto,
+      iconeComprado: !produto.iconeComprado,
+      obtido_produto: produto.iconeComprado
     } : produto));
 
-    // const produtoAtualizado = produtos[index]
-    const produtoAtualizado = {obtido_produto: produtos[index].obtido_produto}
-    console.log("aaaaaaa")
-    console.log(produtoAtualizado)
+    const produtoAtualizado = { obtido_produto: produtos[index].obtido_produto }
     produtosController.editarProduto(produtos[index].id, produtoAtualizado);
-};
+  };
 
   return (
     <div className='card-container'>
@@ -59,7 +66,6 @@ function ProdutosCard({ obterListaId }) {
               <p>R$ {`${produto.preco_produto}`}</p>
             </div>
           </div>
-
           <div className='botao-container'>
             <div className='botao-edit'>
               <BotaoEditar produto={produto} montarCards={montarCards} ></BotaoEditar>
@@ -70,6 +76,11 @@ function ProdutosCard({ obterListaId }) {
           </div>
         </div>
       ))}
+            <div className='desmarcar-todos' onClick={desmarcarTodos}>
+            <Button variant="contained"><AddShoppingCartIcon className='desmarcar-todos_img'/>
+        <p>Desmarcar</p></Button>
+        
+      </div>
     </div>
   );
 }

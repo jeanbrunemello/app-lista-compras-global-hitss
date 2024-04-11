@@ -29,6 +29,22 @@ body {
     word-break: break-word;
 }
 
+.desmarcar-todos{
+    margin: 15px 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.desmarcar-todos p{
+    color: var(--primary-color);
+    text-transform: capitalize;
+}
+
+.desmarcar-todos_img{
+    color: var(--primary-color);
+    margin-right: 10px;
+    margin-left: -5px;
+}
 
 @media only screen and (min-width: 576px) {
     .card-container {
