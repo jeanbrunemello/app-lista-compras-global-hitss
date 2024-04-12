@@ -32,12 +32,19 @@ function ProdutosCard({ obterListaId }) {
   }
 
   const desmarcarTodos = () => {
-    setProdutos(produtos => produtos.map(produto => ({
-      ...produto,
-      iconeComprado: false, // Define o valor de iconeComprado para o valor de todosMarcados
-      obtido_produto: false // Define o valor de obtido_produto para o valor de todosMarcados
-    })));
-  }
+    setProdutos(produtos => produtos.map(produto => {
+      if (produto) {
+        produto = {
+          ...produto,
+          iconeComprado: false,
+          obtido_produto: false
+        }
+        console.log(produto.id);
+        produtosController.editarProduto(produto.id, produto);
+      } 
+      return produto;
+    }));
+  };
 
   const handleClick = (index) => {
 
@@ -76,8 +83,8 @@ function ProdutosCard({ obterListaId }) {
           </div>
         </div>
       ))}
-            <div className='desmarcar-todos' onClick={desmarcarTodos}>
-            <Button variant="contained"><AddShoppingCartIcon className='desmarcar-todos_img'/>
+            <div className='desmarcar-todos'>
+            <Button variant="contained" onClick={desmarcarTodos}><AddShoppingCartIcon className='desmarcar-todos_img'/>
         <p>Desmarcar</p></Button>
         
       </div>
